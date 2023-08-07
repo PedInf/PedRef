@@ -2,14 +2,15 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", loadHeaderContainer);
 
+document.addEventListener("DOMContentLoaded", loadHeaderContainer);
+
 function loadHeaderContainer() {
   var headerContainer = document.getElementById("header-container");
-  const inSubfolder = isPageInSubfolder();
-
-  // Construct the correct path by adding "PedRef/" to the URL
-  const basePath = inSubfolder ? '../' : 'PedRef/';
   
-  fetch(basePath + 'header.html')
+  // Use an absolute path to the header.html file on GitHub Pages
+  const headerPath = '/PedRef/header.html';
+  
+  fetch(headerPath)
     .then(response => response.text())
     .then(html => {
       headerContainer.innerHTML = html;
