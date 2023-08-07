@@ -2,8 +2,6 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", loadHeaderContainer);
 
-document.addEventListener("DOMContentLoaded", loadHeaderContainer);
-
 function loadHeaderContainer() {
   var headerContainer = document.getElementById("header-container");
   
@@ -21,16 +19,6 @@ function loadHeaderContainer() {
     });
 }
   
-  function isPageInSubfolder() {
-    const currentPath = window.location.pathname.split('/');
-    currentPath.pop(); // Remove the current HTML file from the path
-    return currentPath.length > 1; // Check if there are any remaining path segments
-  }
-
-
-
-
-
 // handles the home button toggles in windows screens and mobile devices
 ////////////////////////////////////////////////////////////////////////
 function initializeDropdown() {
