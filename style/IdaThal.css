@@ -56,13 +56,13 @@
 
   .indices-cont {
       display: flex;
-      justify-content: center;
+      justify-content:space-around;
       align-items: center;
       margin-bottom: 5px;
   }
 
   .indices-cont label {
-      width: 110px;
+      width: 130px;
       margin-right: 10px;
       font-size: clamp(18px, 40%, 32px);
       font-weight: bold;
