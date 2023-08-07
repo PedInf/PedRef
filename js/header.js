@@ -1,21 +1,24 @@
   // Loading the header for all pages, then triggering the dropdown menu to be ready for click or touch
  //////////////////////////////////////////////////////////////////////////////////////////////////////
-  document.addEventListener("DOMContentLoaded", loadHeaderContainer);
+document.addEventListener("DOMContentLoaded", loadHeaderContainer);
 
-  function loadHeaderContainer() {
-    var headerContainer = document.getElementById("header-container");
-    const inSubfolder = isPageInSubfolder(); // calling the function that detect if the HTML file in subfolder
+function loadHeaderContainer() {
+  var headerContainer = document.getElementById("header-container");
+  const inSubfolder = isPageInSubfolder();
+
+  // Construct the correct path by adding "PedRef/" to the URL
+  const basePath = inSubfolder ? '../' : 'PedRef/';
   
-    fetch((inSubfolder ? '../' : '') + 'header.html') // Construct the path based on whether the page is in a subfolder
-      .then(response => response.text())
-      .then(html => {
-        headerContainer.innerHTML = html;
-        initializeDropdown(); // Call the function after loading the header
-      })
-      .catch(err => {
-        console.warn("Something went wrong with loading the header:", err);
-      });
-  }
+  fetch(basePath + 'header.html')
+    .then(response => response.text())
+    .then(html => {
+      headerContainer.innerHTML = html;
+      initializeDropdown();
+    })
+    .catch(err => {
+      console.warn("Something went wrong with loading the header:", err);
+    });
+}
   
   function isPageInSubfolder() {
     const currentPath = window.location.pathname.split('/');
