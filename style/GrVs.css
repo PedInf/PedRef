@@ -243,7 +243,9 @@ body {
   text-align: center;
   font-weight: bold;
 }
-
+#IdealWt, #BMI, #bsa {
+  background-color: #ddd;
+}
 /* used to shift the "Patient's Percentile", 3%, 50%,97%  to the rt to appear above the input boxes */
 .empty-space {
   min-width: 80px;
