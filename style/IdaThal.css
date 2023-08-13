@@ -228,7 +228,7 @@
   }
 
   /* Media query for large screens */
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
       .MainCont {
           flex-direction: row;
       }
