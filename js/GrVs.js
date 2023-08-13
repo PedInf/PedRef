@@ -59,6 +59,7 @@ function onInputChange() {
   fifthBpPercentCalculate();
   BpMAPCalculate();
   getBloodPressurePercentiles();
+  IdealwtCalc()
 }
 
 document.getElementById("age").addEventListener("input", onInputChange);
@@ -215,6 +216,75 @@ async function htPercentCalc() {
   document.getElementById("ptht50percent").value = m.toFixed(0);
   document.getElementById("ptht97percent").value = (m * (1 + l * s * 1.88079) ** (1 / l)).toFixed(0);
   getBloodPressurePercentiles();
+}
+
+
+////////////////////////////////////////////
+// Calculate Ideal Body Weight
+//////////////////////////////////////
+
+async function IdealwtCalc() {
+  // Get the age,weight,height input values 
+  const weight = parseFloat(document.getElementById("ptWt").value);
+  const height = parseFloat(document.getElementById("ptHt").value);
+  const ageInYears = parseFloat(document.getElementById("age").value);
+
+  // Check if age,weight,height available
+  if (ageInYears === 0 ||
+    ageInYears === null ||
+    ageInYears > 18 ||
+    weight < 0 ||
+    weight === null ||
+    height < 0 ||
+    height === null) {
+    document.getElementById("IdealWt").value = "";
+    return;
+  }
+
+  // Check if gender is selected
+  const gender = document.querySelector('input[name="gender"]:checked')
+    ? document.querySelector('input[name="gender"]:checked').value
+    : null;
+  if (!gender) {
+    return;
+  }
+
+  // Read Wt data
+  const WtdataFile = "ref/wtage.json";
+  const jsonWtData = await readJSONFile(WtdataFile);
+
+  // Convert age to months and find the approximate match
+  const ageInMonths = ageInYears * 12;
+  const WtageRow = findApproximateMatch(jsonWtData, gender, ageInMonths, "Age");
+
+  if (WtageRow === null) {
+    return;
+  }
+  // Get the Weight L,M,S values 
+  const Wtrecord = jsonWtData[WtageRow];
+  const lWt = Wtrecord.L;
+  const mWt = Wtrecord.M;
+  const sWt = Wtrecord.S;
+
+  // Read the Height file and  Calculate the Height Zscore
+  const HtdataFile = "ref/htage.json";
+  const jsonHtData = await readJSONFile(HtdataFile);
+  const HtageRow = findApproximateMatch(jsonHtData, gender, ageInMonths, "Age");
+  if (HtageRow === null) {
+    return;
+  }
+
+  const Htrecord = jsonHtData[HtageRow];
+  const lHt = Htrecord.L;
+  const mHt = Htrecord.M;
+  const sHt = Htrecord.S;
+
+  // Calculate the Zscore and Ideal body weight based on it 
+  const HtzScore = ((height / mHt) ** lHt - 1) / (lHt * sHt);
+  IdealWt = mWt * Math.pow((lWt * sWt * HtzScore) + 1, 1 / lWt);
+  
+  document.getElementById("IdealWt").value = isNaN(IdealWt) ? "" : IdealWt.toFixed(0);
+
 }
 
 //////////////////////////////////////////
