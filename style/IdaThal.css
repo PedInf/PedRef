@@ -56,13 +56,13 @@
 
   .indices-cont {
       display: flex;
-      justify-content: center;
+      justify-content:space-around;
       align-items: center;
       margin-bottom: 5px;
   }
 
   .indices-cont label {
-      width: 110px;
+      width: 130px;
       margin-right: 10px;
       font-size: clamp(18px, 40%, 32px);
       font-weight: bold;
@@ -137,7 +137,6 @@
       font-weight: bold;
       text-align: center;
       font-size: clamp(12px, 1.2vw, 22px);
-      outline: none;
   }
 
   .IdaThalCalc {
@@ -211,14 +210,6 @@
       text-align: left;
   }
 
-  /* Media query for large screens */
-  @media (min-width: 800px) {
-      .MainCont {
-          flex-direction: row;
-      }
-  }
-
-
   @media only screen and (max-width: 768px) {
       .page-header {
           font-size: 4vw;
@@ -236,7 +227,12 @@
       }
   }
 
-
+  /* Media query for large screens */
+  @media (min-width: 800px) {
+      .MainCont {
+          flex-direction: row;
+      }
+  }
 
   @media only screen and (max-width: 420px) {
 

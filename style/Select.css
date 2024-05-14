@@ -4,7 +4,14 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #bcebeb;
+}
+
+.page-header {
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: center;
+  color: #031055f9;
+  margin-top: 44px;
 }
 
 .container {
@@ -15,13 +22,6 @@ body {
   width: 100%;
   max-width: 1200px;
 }
-.page-header {
-  font-size: 4vw;
-  font-weight: bold;
-  text-align: center;
-  color: #031055f9;
-  margin-top: 48px;
-}
 
 select {
   font-family: Georgia;
@@ -31,7 +31,6 @@ select {
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #d0ffd0;
 }
 
 textarea {
@@ -39,33 +38,17 @@ textarea {
   font-size: clamp(14px, 2vw, 22px);   
   width: 100%;
   box-sizing: border-box;
-  height: 65vh;  
+  height: 65vh;
+  margin-top: 10px;
   padding: 10px;
-  background-color: #c6c4c4;
-}
-
-.conv-header {
-  font-size: 4vw;
-  font-weight: bold;
-  text-align: center;
-  color: #7030A0;
-  margin-top: 44px;
-}
-
-.SelectConv {
-  background-color: #eff0d7;
-}
-
-.textarea-Conv {
-  height: 30vh;
-  margin-bottom: 30px;
-  background-color: #d5d4b1;
 }
 
 @media screen and (max-width: 767px) {
   textarea {
-    height: calc(100vh - 40px);    
-  } 
+    height: calc(100vh - 40px);
+  }
+
+  
   .page-header {
     font-size: 7vw;
   }

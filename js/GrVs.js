@@ -218,6 +218,7 @@ async function htPercentCalc() {
   getBloodPressurePercentiles();
 }
 
+
 ////////////////////////////////////////////
 // Calculate Ideal Body Weight
 //////////////////////////////////////
@@ -285,8 +286,6 @@ async function IdealwtCalc() {
   document.getElementById("IdealWt").value = isNaN(IdealWt) ? "" : IdealWt.toFixed(0);
 
 }
-
-
 
 //////////////////////////////////////////
 // calculate patient's BMI//
@@ -665,15 +664,15 @@ async function getBloodPressurePercentiles() {
       record.Age === Math.floor(ageInYears) &&
       requiredPercentiles.includes(record.BPpercentile)
   );
-
+  
   const setValuesInHTML = (SysDiasBPRecords, percentile) => {
     const systolicRecord = SysDiasBPRecords.find((record) => record.SysDias === "Systolic" && record.BPpercentile === percentile);
     const diastolicRecord = SysDiasBPRecords.find((record) => record.SysDias === "Diastolic" && record.BPpercentile === percentile);
-
+  
     document.getElementById(`Bp${percentile}Percent`).value = systolicRecord?.[heightPercentile.toString()] ?? "";
     document.getElementById(`dBp${percentile}Percent`).value = diastolicRecord?.[heightPercentile.toString()] ?? "";
   };
-
+  
   // Loop through the required BP percentiles (50, 90, 95, and 99) and set the values in the HTML
   requiredPercentiles.forEach((percentile) => {
     setValuesInHTML(
@@ -681,5 +680,5 @@ async function getBloodPressurePercentiles() {
       percentile
     );
   });
-
+  
 }

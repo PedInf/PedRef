@@ -9,15 +9,15 @@
   <link rel="stylesheet" href="style/Select.css">
   <style>
     body {
-      background-color: #f9f0cf;
+      background-color: #ffe7d8;
     }
 
     select {
-      background-color: #DBDBDB;
+      background-color: #ffffff;
     }
-    
+
     textarea {
-      background-color: #e8e8c9;
+      background-color: #FFEFD5;
     }
   </style>
 </head>
@@ -28,15 +28,9 @@
   <div class="container">
     <select id="selectHM"></select>
     <textarea id="textareaHM"></textarea>
+    <script src="/PedRef/js/header.js"></script>
+    <script src="/PedRef/js/PedMed.js"></script>
   </div>
-  <script src="/js/header.js"></script>
-  <script src="/js/Select.js"></script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      loadDataAndPopulateSelectAndTextarea('ref/PDC.json', 'MedicName', 'Dose', 'selectHM', 'textareaHM');
-    });
-  </script>
 </body>
 
 </html>
