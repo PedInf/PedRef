@@ -134,6 +134,7 @@ body {
   border-radius: 5px;
   text-align: center;
   background-color: #fdfdc1;
+  outline: none;
 }
 
 .MainIVframe label,
@@ -224,6 +225,7 @@ body {
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
+ 
 }
 
 .DKAuserInputs label {
@@ -280,6 +282,7 @@ body {
   font-weight: bold;
   text-align: center;
   background-color: #fdfdc1;
+  outline: none;
 }
 
 .DKAmanRes label {
@@ -295,10 +298,15 @@ body {
   white-space: pre-wrap;
   overflow: auto;
   background-color: #fdfdc1;
-  font-size: clamp(14px, 1.2vw, 24px);
+  font-size: clamp(14px, 1.2vw, 18px);
   font-family: "Times New Roman";
-  text-align: center;
+  text-align: left;
+  outline: none;
 }
+#KCorrec::placeholder {
+  color:black
+}
+
 
 .Pertext {
   font-style: italic;
