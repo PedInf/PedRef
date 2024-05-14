@@ -1,9 +1,7 @@
-/* the whole page background color*/
 body {
   background: #e6ffff;
 }
 
-/* Specific Page Header */
 .page-header {
   font-size: 4vw;
   font-weight: bold;
@@ -12,7 +10,6 @@ body {
   margin-top: 44px;
 }
 
-/* Design the whole page container to design inside it*/
 .container {
   max-width: 1500px;
   margin: 0 auto;
@@ -33,8 +30,7 @@ body {
 /* container for S&S and reset button */
 .SSandbutton {
   flex: 2;
-  background-color: #b9faff;
-  
+  background-color: #b9faff;  
   border-radius: 10px;
   padding-left: 5px;
 }
@@ -81,15 +77,35 @@ body {
 
 .guidemsg {
   display: flex;
+  flex-direction: column;
   justify-content: center;
- 
+  align-items: center; 
 }
 
 .guidemsg label {
   text-align: center;
-  width: 75%;
+  width: 40%;
   font-style: italic;
-  background-color: #a4faff;
+  background-color: #e1ffbe;
+  color: #431260;
+  font-size: clamp(16px, 75%, 32px);
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.guidemsg2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.guidemsg2 label {
+  text-align: center;
+  width: 30%;  
+  background-color: #fff4a4;
   color: #000000;
   font-size: clamp(14px, 75%, 32px);
   font-weight: bold;

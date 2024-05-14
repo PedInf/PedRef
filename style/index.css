@@ -26,7 +26,7 @@ body {
   width: 100%;
   height: 180px;
   font-size: clamp(24px, 8vw, 48px);
-  line-height: 2;
+
 }
 
 .grid-container a:hover {
