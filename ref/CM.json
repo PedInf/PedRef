@@ -53,7 +53,7 @@
  },
  {
    "Medication": "Oseltamivir",
-   "Dose": "Weight (kg)     Dosage for 5 Days                 \n≤5                       30 mg PO BID                                \n>15–23               45 mg PO BID                                  \n>23–40               60 mg PO BID                                    \n>40                      75 mg PO BID"
+   "Dose": "Weight (kg)     Dosage for 5 Days                 \n≤15                       30 mg PO BID                                \n>15–23               45 mg PO BID                                  \n>23–40               60 mg PO BID                                    \n>40                      75 mg PO BID"
  },
  {
    "Medication": "Acyclovir",
