@@ -31,7 +31,13 @@
     <textarea id="textareaCM"></textarea>
   </div>
   <script src="/js/header.js"></script>
-  <script src="/js/ComMed.js"></script>
+  <script src="/js/Select.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadDataAndPopulateSelectAndTextarea('ref/CM.json', 'Medication', 'Dose', 'selectCM', 'textareaCM');
+    });
+  </script>
 </body>
 
 </html>
